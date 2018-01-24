@@ -29,7 +29,7 @@ class Bin {
         time = System.nanoTime() - time;
 
         System.out.printf("Time taken to do %d failed binary searches for array"
-                          +" of size %d : %d seconds\n",
+                          +" of size %d : %d nanoseconds\n",
                           NSEARCH, ARR_SIZE, time);
     }
 
