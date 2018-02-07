@@ -28,7 +28,7 @@ class HanoiPillar:
 
 
 
-n = 10
+n = 5
 P1 = HanoiPillar(n)
 P2 = HanoiPillar()
 P3 = HanoiPillar()
@@ -41,13 +41,14 @@ def hanoi(pillars, n):
             t1, t2, t3 = tuple(pillars)
             hanoi([t1, t2, t3], n-1)
 
+            print(P1, P2, P3, P4, P5)
             t1 * t2
-#            print(P1, P2, P3, P4, P5)
 
             hanoi([t3, t2, t1], n-1)
 
+            print(P1, P2, P3, P4, P5)
             t2 * t3
-#            print(P1, P2, P3, P4, P5)
+            print(P1, P2, P3, P4, P5)
 
             hanoi([t1, t2, t3], n-1)
 
@@ -57,12 +58,13 @@ def hanoi(pillars, n):
             hanoi([t1, t2, t3, t4, t4], n-1)
 
             t1 * t2 * t3
-#            print(P1, P2, P3, P4, P5)
+            print(P1, P2, P3, P4, P5)
 
             hanoi([t4, t3, t2], n-1)
 
+            print(P1, P2, P3, P4, P5)
             t3 * t4 * t5
-#            print(P1, P2, P3, P4, P5)
+            print(P1, P2, P3, P4, P5)
 
             hanoi([t2, t2, t3, t4, t5], n-1)
 
