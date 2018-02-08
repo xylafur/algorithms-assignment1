@@ -30,13 +30,34 @@ def hanoi(S, A, D, n):
         S * D
         hanoi(A, S, D, n-1)
 
+def hanoi5(S, A1, I, A2, D, n):
+    """ This problem can really be viewed as two hanoi3 problems as shown below 
+        | | | | |
+        1 2 3
+            1 2 3
+
+        so first we will move all disks from S to I, then from I to D
+    """
+    def hanoi3(S, A, D, n):
+        if n == 1:
+            S * A
+            A * D
+        elif n >= 2:
+            hanoi3(S, A, D, n-1)
+            S * A
+            hanoi3(D, A, S, n-1)
+            A * D
+            hanoi3(S, A, D, n-1)
+    hanoi3(S, A1, I, n)
+    hanoi3(I, A2, D, n)
+
 if __name__ == '__main__':
     S = HanoiPillar(3)
-    A = HanoiPillar()
+    A1 = HanoiPillar()
+    A2 = HanoiPillar()
+    A3 = HanoiPillar()
     D = HanoiPillar()
-    print(S, A, D)
-    hanoi(S, A, D, 3)
-    print(S, A, D)
+    hanoi5(S, A1, A2, A3, D, 3)
 
 
 
