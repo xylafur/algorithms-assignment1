@@ -20,7 +20,7 @@ struct timespec diff(struct timespec start, struct timespec end)
 
 /*  Function to fragment memory.
  */
-void fragment(int m)
+void fragment(int m, int d)
 {
     int ** ar1 = malloc(3 * m * sizeof(int *));
     int ** ar2 = malloc(m * sizeof(int *));
@@ -52,11 +52,31 @@ void fragment(int m)
             printf("Error, malloc failed\n");
             exit(1);
         }
+        
     }
+
+    printf("\n");
+
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &alloc2_end);
 
     alloc2 = diff(alloc2_start, alloc2_end);
     printf("Time1: %d seconds, %lu nanoseconds\n", alloc2.tv_sec, alloc2.tv_nsec);
+
+    if(d){
+        printf("Addresses for array 1\n");
+        for(i = 0; i < 3 * m; i++){
+                printf("%lu, ", ar1[i]);
+                if(i % 10 == 0)
+                    printf("\n");
+        }
+        printf("Addresses for array 2\n");
+        for(i = 0; i < m; i++){
+                printf("%lu, ", ar2[i]);
+                if(i % 10 == 0)
+                    printf("\n");
+        }
+    }
+    exit(1);
 
     for(i = 1; i < 3 * m; i+= 2)
         free(ar1[i]);
@@ -73,14 +93,18 @@ int main(int argc, char * argv [])
         printf("Need to supply default value for m as a parameter\n");
         exit(1);
     }
-
-    int m;
+    int m, d = 0;
     char y [256];
+
+    if(argc == 3)
+        d = 1;
+
     m = atoi(argv[1]);
     do{
-        fragment(m);
+        fragment(m, d);
         m++;
-    }while(1);
+        break;
+    }while(0);
     
     return 0;
 }
