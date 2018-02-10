@@ -37,7 +37,7 @@ void fragment(int m)
     printf("Running fragment with m of value %d\n", m);
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &alloc1_start);
     for(i = 0; i < 3 * m; i++)
-        ar1[i] = malloc(800 * sizeof(int));
+        ar1[i] = malloc(800000 * sizeof(int));
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &alloc1_end);
     alloc1 = diff(alloc1_start, alloc1_end);
     printf("Time1: %d seconds, %lu nanoseconds\n", alloc1.tv_sec, alloc1.tv_nsec);
@@ -48,7 +48,7 @@ void fragment(int m)
 
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &alloc2_start);
     for(i = 0; i < m; i++)
-        ar2[i] = malloc(900 * sizeof(int));
+        ar2[i] = malloc(900000 * sizeof(int));
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &alloc2_end);
 
     alloc2 = diff(alloc2_start, alloc2_end);
@@ -71,6 +71,7 @@ int main(int argc, char * argv [])
         printf("Need to supply default value for m as a parameter\n");
         exit(1);
     }
+    printf("sizeof int: %d\n", sizeof(int));
 
     int m;
     char y [256];

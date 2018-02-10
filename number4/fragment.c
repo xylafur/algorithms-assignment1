@@ -3,6 +3,8 @@
 #include <time.h>
 #include <stdlib.h>
 
+/*  Function to get the difference between timespec structs
+ */
 struct timespec diff(struct timespec start, struct timespec end)
 {
 	struct timespec temp;
@@ -16,6 +18,8 @@ struct timespec diff(struct timespec start, struct timespec end)
 	return temp;
 }
 
+/*  Function to fragment memory.
+ */
 void fragment(int m)
 {
     int ** ar1 = malloc(3 * m * sizeof(int *));
@@ -27,8 +31,13 @@ void fragment(int m)
 
     printf("Running fragment with m of value %d\n", m);
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &alloc1_start);
-    for(i = 0; i < 3 * m; i++)
+    for(i = 0; i < 3 * m; i++){
         ar1[i] = malloc(800000 * sizeof(int));
+        if(ar1[i] == 0){
+            printf("Error, malloc failed\n");
+            exit(1);
+        }
+    }
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &alloc1_end);
     alloc1 = diff(alloc1_start, alloc1_end);
     printf("Time1: %d seconds, %lu nanoseconds\n", alloc1.tv_sec, alloc1.tv_nsec);
@@ -37,18 +46,24 @@ void fragment(int m)
         free(ar1[i]);
 
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &alloc2_start);
-    for(i = 0; i < m; i++)
+    for(i = 0; i < m; i++){
         ar2[i] = malloc(900000 * sizeof(int));
+        if(ar2[i] == 0){
+            printf("Error, malloc failed\n");
+            exit(1);
+        }
+    }
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &alloc2_end);
 
     alloc2 = diff(alloc2_start, alloc2_end);
     printf("Time1: %d seconds, %lu nanoseconds\n", alloc2.tv_sec, alloc2.tv_nsec);
 
-
     for(i = 1; i < 3 * m; i+= 2)
         free(ar1[i]);
     for(i = 0; i < m; i++)
         free(ar2[i]);
+    free(ar1);
+    free(ar2);
 }
 
 
@@ -64,11 +79,8 @@ int main(int argc, char * argv [])
     m = atoi(argv[1]);
     do{
         fragment(m);
-        m *= 2;
-
-        printf("Do you want to run again? ");
-        fgets(y, 256, stdin);
-    }while(y[0] == 'y');
+        m++;
+    }while(1);
     
     return 0;
 }
