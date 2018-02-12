@@ -15,6 +15,8 @@ class HanoiPillar:
         if len(b._stack) > 0:
             a_high = self._stack[0]
             b_high = self._stack[0]
+        else:
+            raise InvalidMoveException("No pillar to move")
         b._stack.append(self._stack.pop())
         check_order(self._stack)
         check_order(b._stack)
@@ -30,7 +32,7 @@ def hanoi(S, A, D, n):
         S * D
         hanoi(A, S, D, n-1)
 
-def hanoi5(S, A1, I, A2, D, n):
+def hanoi_5(S, A1, I, A2, D, n):
     """ This problem can really be viewed as two hanoi3 problems as shown below 
         | | | | |
         1 2 3
@@ -50,6 +52,27 @@ def hanoi5(S, A1, I, A2, D, n):
             hanoi3(S, A, D, n-1)
     hanoi3(S, A1, I, n)
     hanoi3(I, A2, D, n)
+
+def hanoi5(S, A1, A2, A3, D, n):
+    """ Steps:
+            1: Move all disks to the second peg
+            2: move all disks forward 2 pegs, we can treat the middle 3 pegs
+               as a standard hanoi 3
+            3: Move all disks to the last peg
+    """
+    def move1(S, D, A2, A3, n, move_from_d=True):
+        """ Inner function where we want to move all of the disks from S to D
+            (which we assume is right next to S)
+        """
+        pass
+    def move3(S, A, D, n):
+        pass
+    move1(S, A1, A2, A3, n)
+    move3(A1, A2, A3, n)
+    move1(A3, D, A2, A1, n, move_from_d=False)
+
+
+            
 
 if __name__ == '__main__':
     S = HanoiPillar(3)

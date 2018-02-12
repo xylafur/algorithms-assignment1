@@ -1,0 +1,103 @@
+[  151.626905] wlp3s0: disconnect from AP 0c:f4:d5:02:bc:18 for new auth to 0c:f4:d5:02:bc:1c
+[  151.630408] wlp3s0: authenticate with 0c:f4:d5:02:bc:1c
+[  151.633337] wlp3s0: send auth to 0c:f4:d5:02:bc:1c (try 1/3)
+[  151.637763] wlp3s0: authenticated
+[  151.638618] wlp3s0: associate with 0c:f4:d5:02:bc:1c (try 1/3)
+[  151.640794] wlp3s0: RX ReassocResp from 0c:f4:d5:02:bc:1c (capab=0x1011 status=0 aid=2)
+[  151.642072] wlp3s0: associated
+[  151.647766] wlp3s0: Limiting TX power to 36 (36 - 0) dBm as advertised by 0c:f4:d5:02:bc:1c
+[  155.319315] a.out invoked oom-killer: gfp_mask=0x14280ca(GFP_HIGHUSER_MOVABLE|__GFP_ZERO), nodemask=(null),  order=0, oom_score_adj=0
+[  155.319318] a.out cpuset=/ mems_allowed=0
+[  155.319321] CPU: 0 PID: 1669 Comm: a.out Not tainted 4.14.14-200.fc26.x86_64 #1
+[  155.319322] Hardware name: ASUSTeK COMPUTER INC. K501UX/K501UX, BIOS K501UX.208 12/04/2015
+[  155.319322] Call Trace:
+[  155.319328]  dump_stack+0x5c/0x85
+[  155.319331]  dump_header+0x94/0x219
+[  155.319333]  ? cap_inode_getsecurity+0x230/0x230
+[  155.319334]  oom_kill_process+0x203/0x3f0
+[  155.319336]  out_of_memory+0x2bb/0x4e0
+[  155.319338]  __alloc_pages_slowpath+0xac8/0xe60
+[  155.319340]  __alloc_pages_nodemask+0x28e/0x2b0
+[  155.319342]  alloc_pages_vma+0x7c/0x200
+[  155.319345]  __handle_mm_fault+0x99b/0x1290
+[  155.319347]  handle_mm_fault+0xaa/0x1f0
+[  155.319349]  __do_page_fault+0x25d/0x4e0
+[  155.319350]  do_page_fault+0x32/0x110
+[  155.319352]  ? page_fault+0x36/0x60
+[  155.319353]  page_fault+0x4c/0x60
+[  155.319355] RIP: 0033:0x7f8c44a77a48
+[  155.319356] RSP: 002b:00007ffd40dd6fa0 EFLAGS: 00010206
+[  155.319357] Mem-Info:
+[  155.319360] active_anon:1991717 inactive_anon:8271 isolated_anon:0
+                active_file:39 inactive_file:46 isolated_file:0
+                unevictable:0 dirty:0 writeback:0 unstable:0
+                slab_reclaimable:5523 slab_unreclaimable:10919
+                mapped:18 shmem:8532 pagetables:1996922 bounce:0
+                free:34939 free_pcp:111 free_cma:0
+[  155.319362] Node 0 active_anon:7966868kB inactive_anon:33084kB active_file:156kB inactive_file:184kB unevictable:0kB isolated(anon):0kB isolated(file):0kB mapped:72kB dirty:0kB writeback:0kB shmem:34128kB shmem_thp: 0kB shmem_pmdmapped: 0kB anon_thp: 0kB writeback_tmp:0kB unstable:0kB all_unreclaimable? no
+[  155.319363] Node 0 DMA free:15892kB min:64kB low:80kB high:96kB active_anon:0kB inactive_anon:0kB active_file:0kB inactive_file:0kB unevictable:0kB writepending:0kB present:15984kB managed:15900kB mlocked:0kB kernel_stack:0kB pagetables:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB
+[  155.319365] lowmem_reserve[]: 0 1748 15891 15891 15891
+[  155.319368] Node 0 DMA32 free:63600kB min:7428kB low:9284kB high:11140kB active_anon:875220kB inactive_anon:0kB active_file:0kB inactive_file:0kB unevictable:0kB writepending:0kB present:1904888kB managed:1815836kB mlocked:0kB kernel_stack:0kB pagetables:873512kB bounce:0kB free_pcp:240kB local_pcp:240kB free_cma:0kB
+[  155.319371] lowmem_reserve[]: 0 0 14142 14142 14142
+[  155.319373] Node 0 Normal free:60264kB min:60084kB low:75104kB high:90124kB active_anon:7091256kB inactive_anon:33084kB active_file:156kB inactive_file:184kB unevictable:0kB writepending:0kB present:14745600kB managed:14482092kB mlocked:0kB kernel_stack:2912kB pagetables:7114176kB bounce:0kB free_pcp:204kB local_pcp:204kB free_cma:0kB
+[  155.319375] lowmem_reserve[]: 0 0 0 0 0
+[  155.319377] Node 0 DMA: 1*4kB (U) 0*8kB 1*16kB (U) 2*32kB (U) 3*64kB (U) 2*128kB (U) 0*256kB 0*512kB 1*1024kB (U) 1*2048kB (M) 3*4096kB (M) = 15892kB
+[  155.319385] Node 0 DMA32: 0*4kB 0*8kB 1*16kB (M) 1*32kB (U) 1*64kB (M) 0*128kB 2*256kB (UM) 1*512kB (U) 1*1024kB (U) 2*2048kB (UM) 14*4096kB (M) = 63600kB
+[  155.319392] Node 0 Normal: 226*4kB (ME) 78*8kB (UME) 677*16kB (ME) 987*32kB (UME) 255*64kB (UME) 0*128kB 0*256kB 0*512kB 0*1024kB 0*2048kB 0*4096kB = 60264kB
+[  155.319401] Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=1048576kB
+[  155.319405] Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=2048kB
+[  155.319405] 8624 total pagecache pages
+[  155.319406] 0 pages in swap cache
+[  155.319407] Swap cache stats: add 0, delete 0, find 0/0
+[  155.319407] Free swap  = 0kB
+[  155.319407] Total swap = 0kB
+[  155.319408] 4166618 pages RAM
+[  155.319408] 0 pages HighMem/MovableOnly
+[  155.319409] 88161 pages reserved
+[  155.319409] 0 pages cma reserved
+[  155.319409] 0 pages hwpoisoned
+[  155.319410] [ pid ]   uid  tgid total_vm      rss nr_ptes nr_pmds swapents oom_score_adj name
+[  155.319417] [  441]     0   441    35021      165      64       3        0             0 systemd-journal
+[  155.319418] [  457]     0   457    30346      428      29       3        0             0 lvmetad
+[  155.319420] [  469]     0   469    16302      734      28       3        0         -1000 systemd-udevd
+[  155.319422] [  621]     0   621    16016      104      29       3        0         -1000 auditd
+[  155.319423] [  623]     0   623    21154       38      12       3        0             0 audispd
+[  155.319425] [  626]     0   626    10211       63      26       3        0             0 sedispatch
+[  155.319426] [  647]     0   647     1118       15       8       3        0             0 rngd
+[  155.319427] [  648]     0   648   103790      426      70       4        0             0 ModemManager
+[  155.319429] [  649]     0   649     4359       33      11       3        0             0 mcelog
+[  155.319430] [  650]     0   650    65813      102      30       4        0             0 switcheroo-cont
+[  155.319431] [  651]    70   651    18633      652      32       3        0             0 avahi-daemon
+[  155.319432] [  652]     0   652    70074      255      82       3        0             0 sssd
+[  155.319434] [  653]    81   653    19792      230      31       4        0          -900 dbus-daemon
+[  155.319435] [  659]    70   659    18074       89      26       3        0             0 avahi-daemon
+[  155.319436] [  660]     0   660    51195      114      36       3        0             0 gssproxy
+[  155.319437] [  669]     0   669    71697      397      87       3        0             0 sssd_be
+[  155.319439] [  670]     0   670    86291     4846      87       3        0             0 firewalld
+[  155.319440] [  671]   172   671    48579       75      27       3        0             0 rtkit-daemon
+[  155.319441] [  672]     0   672     4259       37      13       3        0             0 alsactl
+[  155.319442] [  673]     0   673    10217       93      24       3        0             0 bluetoothd
+[  155.319443] [  680]     0   680   116500      323      68       3        0             0 abrtd
+[  155.319445] [  685]   996   685    29987       95      26       3        0             0 chronyd
+[  155.319446] [  728]     0   728    69910      226      87       4        0             0 sssd_nss
+[  155.319447] [  729]     0   729   104347      196      47       4        0             0 accounts-daemon
+[  155.319448] [  730]     0   730    17861      490      36       3        0             0 systemd-logind
+[  155.319450] [  742]   997   742   138184     1335      62       3        0             0 polkitd
+[  155.319451] [  750]     0   750   231245      896     104       4        0             0 NetworkManager
+[  155.319452] [  765]     0   765   241016     1886     183       4        0             0 libvirtd
+[  155.319453] [  772]     0   772    10647       51      21       3        0             0 atd
+[  155.319454] [  775]     0   775    35833      158      21       3        0             0 crond
+[  155.319456] [  840]     0   840    13173      216      30       3        0             0 wpa_supplicant
+[  155.319457] [  847]     0   847   194820      321     269       4        0             0 abrt-dump-journ
+[  155.319458] [  849]     0   849   196868      321     150       4        0             0 abrt-dump-journ
+[  155.319459] [  877]     0   877    41035      251      73       3        0             0 login
+[  155.319461] [  991]    99   991    15148       91      25       3        0             0 dnsmasq
+[  155.319462] [  992]     0   992    15141       88      25       3        0             0 dnsmasq
+[  155.319463] [ 1148]     0  1148    19292      477      41       3        0             0 dhclient
+[  155.319464] [ 1239]  1000  1239    20681      262      40       3        0             0 systemd
+[  155.319466] [ 1241]  1000  1241    33211      888      53       3        0             0 (sd-pam)
+[  155.319467] [ 1246]  1000  1246    41522      781      32       3        0             0 zsh
+[  155.319468] [ 1669]  1000  1669 1551882742  1972730 1994858    6020        0             0 a.out
+[  155.319469] Out of memory: Kill process 1669 (a.out) score 974 or sacrifice child
+[  155.319495] Killed process 1669 (a.out) total-vm:6207530968kB, anon-rss:7890916kB, file-rss:4kB, shmem-rss:0kB
+[  157.089306] oom_reaper: reaped process 1669 (a.out), now anon-rss:0kB, file-rss:0kB, shmem-rss:0kB

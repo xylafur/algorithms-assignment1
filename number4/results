@@ -1,0 +1,47 @@
+Running fragment with m of value 600000
+
+Times for first allocation:
+Time1 i = 0: 0 seconds, 7358 nanoseconds
+Time1 i = 1: 0 seconds, 4126 nanoseconds
+Time1 i = 2: 0 seconds, 4083 nanoseconds
+Time1 i = 3: 0 seconds, 4003 nanoseconds
+Time1 i = 4: 0 seconds, 4044 nanoseconds
+Time1 i = 5: 0 seconds, 4489 nanoseconds
+Time1 i = 6: 0 seconds, 4039 nanoseconds
+Time1 i = 7: 0 seconds, 5352 nanoseconds
+Time1 i = 8: 0 seconds, 4087 nanoseconds
+Time1 i = 9: 0 seconds, 4147 nanoseconds
+Time1 i = 10: 0 seconds, 4061 nanoseconds
+Time1 i = 1799990: 0 seconds, 3057 nanoseconds
+Time1 i = 1799991: 0 seconds, 2460 nanoseconds
+Time1 i = 1799992: 0 seconds, 2606 nanoseconds
+Time1 i = 1799993: 0 seconds, 2395 nanoseconds
+Time1 i = 1799994: 0 seconds, 2466 nanoseconds
+Time1 i = 1799995: 0 seconds, 2468 nanoseconds
+Time1 i = 1799996: 0 seconds, 2466 nanoseconds
+Time1 i = 1799997: 0 seconds, 2482 nanoseconds
+Time1 i = 1799998: 0 seconds, 2451 nanoseconds
+Time1 i = 1799999: 0 seconds, 2468 nanoseconds
+
+Times for Second allocation:
+Time2 i = 0: 0 seconds, 2639176 nanoseconds
+Time2 i = 1: 0 seconds, 2589790 nanoseconds
+Time2 i = 2: 0 seconds, 2567937 nanoseconds
+Time2 i = 3: 0 seconds, 2532621 nanoseconds
+Time2 i = 4: 0 seconds, 2573664 nanoseconds
+Time2 i = 5: 0 seconds, 2592438 nanoseconds
+Time2 i = 6: 0 seconds, 2551083 nanoseconds
+Time2 i = 7: 0 seconds, 2491375 nanoseconds
+Time2 i = 8: 0 seconds, 2486527 nanoseconds
+Time2 i = 9: 0 seconds, 2433881 nanoseconds
+Time2 i = 10: 0 seconds, 2476793 nanoseconds
+Time2 i = 599990: 0 seconds, 4362 nanoseconds
+Time2 i = 599991: 0 seconds, 21330 nanoseconds
+Time2 i = 599992: 0 seconds, 3046 nanoseconds
+Time2 i = 599993: 0 seconds, 2978 nanoseconds
+Time2 i = 599994: 0 seconds, 3232 nanoseconds
+Time2 i = 599995: 0 seconds, 2877 nanoseconds
+Time2 i = 599996: 0 seconds, 2795 nanoseconds
+Time2 i = 599997: 0 seconds, 2812 nanoseconds
+Time2 i = 599998: 0 seconds, 2763 nanoseconds
+Time2 i = 599999: 0 seconds, 2855 nanoseconds
