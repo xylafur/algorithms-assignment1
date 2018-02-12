@@ -19,20 +19,23 @@ def run_test(array):
     """ performs 10000000 worst case binary searches for a given size and prints
         the time taken
     """
-    num_times = 10000000
-    t = time.time()
-    for _ in range(num_times):
+    t = time.clock()
+    for _ in range(10000000):
         binary_search(len(array), array)
-    #time is in seconds so we multiply by 10**9 for nanoseconds
-    t = (time.time() - t) * 10**9
-    print("time taken for 10,000,000 worst case binary searches for arr "
-          "of size {} => {} ns".format(len(array), t))
+    t = time.clock() - t
+    t *= (10 ** 9) # nano second conversion
 
-sizes = [128, 512, 2048, 8192, 32768, 131072, 524288, 2097152]
+    print('array size : %7d, time : %d ns' % (len(array), t))
+
+>>>>>>> Stashed changes
+
 def main():
     """ Main function that performs worst case binary searches on all of 
         specified sizes
     """
+    sizes = [128, 512, 2048, 8192, 32768, 131072, 524288, 2097152]
+    print("# Time taken to do 10000000 failed binary searches"
+            +" for different array sizes.")
     for size in sizes:
         run_test([i for i in range(size)])
 

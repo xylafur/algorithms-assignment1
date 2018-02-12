@@ -1,0 +1,10 @@
+# Time taken to do 10000000 failed binary searches different array sizes.
+# Timed using Thread CPU Time executing code
+array size :     128, time : 124274328 ns
+array size :     512, time : 184635323 ns
+array size :    2048, time : 203216883 ns
+array size :    8912, time : 247891369 ns
+array size :   32768, time : 287935187 ns
+array size :  131072, time : 328621790 ns
+array size :  524288, time : 388503416 ns
+array size : 2097152, time : 453000513 ns

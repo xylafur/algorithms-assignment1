@@ -1,0 +1,9 @@
+# Time taken to do 10000000 failed binary searches for different array sizes.
+array size :     128, time : 13715929000 ns
+array size :     512, time : 19930928000 ns
+array size :    2048, time : 23668402000 ns
+array size :    8192, time : 27054311999 ns
+array size :   32768, time : 30475318000 ns
+array size :  131072, time : 34272081000 ns
+array size :  524288, time : 37647925000 ns
+array size : 2097152, time : 41170307000 ns

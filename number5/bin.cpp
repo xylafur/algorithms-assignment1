@@ -1,8 +1,10 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include <stdio.h>
 #include <chrono>
 using namespace std;
+using namespace std::chrono;
 
 #define NSEARCH 10000000
 
@@ -21,23 +23,24 @@ int binary_search(const int search, int * arr, const size_t size) {
     return -1;
 }
 
-
 void run_test(size_t ARR_SIZE) {
     int * arr = new int[ARR_SIZE];
     for (size_t i = 0; i < ARR_SIZE; ++i) {
         arr[i] = i;
     }
 
-    auto begin = std::chrono::high_resolution_clock::now();
+    auto t1 = high_resolution_clock::now();
     for (int i = 0; i < NSEARCH; ++i) {
         binary_search(ARR_SIZE, arr, ARR_SIZE);
     }
-    auto end = std::chrono::high_resolution_clock::now();
-    auto time = std::chrono::duration_cast<std::chrono::nanoseconds>(end-begin).count();
-    printf("%d failed binary searches for array of size %d : %d ns\n",
-            NSEARCH, ARR_SIZE, time);
+    auto t2 = high_resolution_clock::now();
 
-    delete[] arr;
+    auto time = duration_cast<std::chrono::nanoseconds>(t2 - t1).count();
+
+    printf("array size : %7d, time : %d ns\n",
+            ARR_SIZE, time);
+
+    delete[] arr; // clean up
 }
 
 int main(int argc, char ** argv) {
@@ -51,6 +54,9 @@ int main(int argc, char ** argv) {
         524288,
         2097152,
     };
+
+    cout << "# Time taken to do " << NSEARCH << " failed binary searches"
+         << " for different array sizes. " << endl;
 
     for (int i = 0; i < 8; ++i) {
         run_test(sizes[i]);
