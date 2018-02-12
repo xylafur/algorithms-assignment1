@@ -40,7 +40,7 @@ void run_test(size_t ARR_SIZE) {
     printf("array size : %7d, time : %d ns\n",
             ARR_SIZE, time);
 
-    delete[] arr; // clean up
+//    delete[] arr; // clean up
 }
 
 int main(int argc, char ** argv) {
