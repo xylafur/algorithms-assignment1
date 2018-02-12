@@ -26,6 +26,16 @@ class HanoiPillar:
         return str(self._stack)
 
 
+def hanoi3(S,A,D, n, print_state):
+    hanoi3(S,A,D, n-1):
+    S * A
+    print_state()
+    hanoi3(D,A,S, n-1):
+    A * S
+    print_state()
+    hanoi3(S,A,D, n-1):
+
+
 def hanoi(pillars, n, print_state):
     """
         This function solves towers of hanoi
@@ -41,48 +51,53 @@ def hanoi(pillars, n, print_state):
     """
     if n > 0:
         if len(pillars) == 3: # acts like hanoi 3
-            t1, t2, t3 = tuple(pillars)
+            S, A, D = tuple(pillars)
 
-            hanoi([t1, t2, t3], n-1, print_state)
-                # recursive call 1
+            hanoi([S, A, D], n-1, print_state)
+                # move n-1 disks from S to D
 
-            t1 * t2
+            S * A # move disk n from S to A
             print_state()
 
-            hanoi([t3, t2, t1], n-1, print_state)
-                # recursive call 2
+            hanoi([D, A, S], n-1, print_state)
+                # move n-1 disks from D to S
 
-            t2 * t3
+            A * S # move disk n from A to S
             print_state()
 
             hanoi([t1, t2, t3], n-1, print_state)
-                # recursive call 3
+                # move n-1 disks from S to D
+
 
         elif len(pillars) == 5: # acts like hanoi 5
-            t1,t2,t3,t4,t5 = tuple(pillars)
+            S, A1, A2, A3, D = tuple(pillars)
 
-            hanoi([t1, t2, t3, t4, t4], n-1, print_state)
-                # recursive call 1
+            hanoi([S, A1, A2, A3, A3], n-1, print_state)
+                # move the n-1 disks from S to A3
 
-            t1 * t2
-            if t1 != t2:
+            S * A1  # move disk n to A1
+
+            if S != A1:
                 print_state()
 
-            t2 * t3
+            A1 * A2 # move disk n to A2
+
             print_state()
 
-            hanoi([t4, t3, t2], n-1, print_state)
-                # recursive call 2
+            hanoi([A3, A2, A1], n-1, print_state)
+                # move n-1 disks from A3 to A1
 
-            t3 * t4
+            A2 * A3 # move disk n from A2 to A3
+
             print_state()
 
-            t4 * t5
+            A3 * D  # move disk n from A3 to D
+
             if t4 != t5:
                 print_state()
 
-            hanoi([t2, t2, t3, t4, t5], n-1, print_state)
-                # recursive call 3
+            hanoi([A1, A1, A2, A3, D], n-1, print_state)
+                # move n-1 disks from A1 to D
 
 def Main():
     n = 0
